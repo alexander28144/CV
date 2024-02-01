@@ -7,7 +7,10 @@
 * **touch** -- создание файлов
 * **mkdir** -- создать директорию
 ```bash
+
 cd ~ #Перейти к домашней директории
+
+
 ls #Посмотреть список файлов директории
 ```
 ### Git
@@ -21,3 +24,20 @@ ls #Посмотреть список файлов директории
 * **git push -u original master** -- первая синхронизация с GitHub
 * **git push** --все дальнейшие синхронизации
 ![Удачи](pic.jpg)
+
+----
+```mermaid
+
+erDiagram
+            CUSTOMER }|..|{ DELIVERY-ADDRESS : has
+            CUSTOMER ||--o{ ORDER : places
+            CUSTOMER ||--o{ INVOICE : "liable for"
+            DELIVERY-ADDRESS ||--o{ ORDER : receives
+            INVOICE ||--|{ ORDER : covers
+            ORDER ||--|{ ORDER-ITEM : includes
+            PRODUCT-CATEGORY ||--|{ PRODUCT : contains
+            PRODUCT ||--o{ ORDER-ITEM : "ordered in"
+
+```
+* **HEAD** -- указывает на головной файл, который хранится в .git
+![Статусы](pic2.jpg)
